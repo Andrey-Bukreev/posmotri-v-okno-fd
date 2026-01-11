@@ -165,6 +165,15 @@ font-weight: 400;
   color: #FFF;
 }
 
+.content__list-item:focus {
+  outline: none;
+}
+
+
+.content__list-item:focus-visible {
+  outline: 1px solid #FFF;  
+}
+
 .content__video-card-description-container {
   flex-grow: 1;
   overflow: hidden;
@@ -218,6 +227,7 @@ font-weight: 400;
   font-weight: 400;
   appearance: none;
   width: 225px;
+  color: #FFF;
 }
 
 .search-form__textfield::placeholder {
@@ -240,7 +250,11 @@ input[type="checkbox"]:checked + span::after {
 }
 
 .search-form__label:hover {
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFF;    
 }
 
 .button {
@@ -267,6 +281,13 @@ input[type="checkbox"]:checked + span::after {
   background-color: #545050;
 }
 
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;   
+}
 
 .content__card-link {
   display: block;
