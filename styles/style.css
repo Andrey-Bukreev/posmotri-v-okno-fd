@@ -29,7 +29,6 @@ html {
   align-items: flex-end;
   justify-content: center;
   gap: 30px;
-  max-height: 534px;
 }
 
 h1,
@@ -72,6 +71,7 @@ ol {
   height: 386px;
   width: 711px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 video {
@@ -88,12 +88,6 @@ video {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
 }
 
 .visually-hidden {
@@ -144,12 +138,15 @@ video {
   appearance: none;
   width: 225px;
   color: #FFF;
+  
 }
 
 .search-form__textfield::placeholder {
   color: #FFF;
   opacity: 0.7;
 }
+
+
 
 .search-form__pseudo-checkbox {
   width: 19px;
@@ -166,10 +163,14 @@ input[type="checkbox"]:checked + span::after {
   background-color: #FFF;
 }
 
-.search-form__label:hover {
+ .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   cursor: pointer;
-}
+ }
+
+ input[type="checkbox"] + span {
+  cursor: pointer;
+ }
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #FFF;    
@@ -221,6 +222,7 @@ input[type="checkbox"]:checked + span::after {
 
 .title > .content__accent {
   color: #545050;
+  text-align: center;
 }
 
 /* Блок с карточками */
@@ -228,6 +230,8 @@ input[type="checkbox"]:checked + span::after {
 .content__list-container {
   max-height: 298px;
   overflow: scroll;
+  overflow-x: auto;
+  position: relative;
 }
 
 .content__details {
@@ -269,12 +273,6 @@ img {
   flex-grow: 1;
 }
 
-.content__card-link {
-  display: block;
-  text-decoration: none;
-  color: #FFF;
-}
-
 .content__video-card-title {
   font-family: Oswald, sans-serif;
   text-transform: uppercase;
@@ -286,6 +284,14 @@ img {
   overflow: hidden;
   max-width: 192px; 
 }
+
+ .content__video-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden; 
+ } 
 
 .more-button {
   width: 100%;
